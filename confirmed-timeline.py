@@ -28,12 +28,11 @@ def countryData(country):
 #print(countryData(countries[0]))
 
 i = 0
+ax = countryData(countries[i]).plot('Date_reported', 'New_cases', label = countries[i])
 
-while i < 5:
-    ax = countryData(countries[i]).plot('Date_reported', 'Cumulative_cases')
-    countryData(countries[i+1]).plot('Date_reported', 'Cumulative_cases', ax=ax)
-
-    i+=1
+while i != 7:
+    countryData(countries[i+1]).plot('Date_reported', 'New_cases', ax = ax, label = countries[i+1])
+    i += 1
 
 '''
 ax = countryData(countries[1]).plot('Date_reported', 'Cumulative_cases')
